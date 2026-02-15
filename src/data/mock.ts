@@ -1,0 +1,167 @@
+import { ChatPreview, Contact, GroupAvatarOption, Message } from '../types/models';
+
+export const currentUserId = 'me';
+
+export const contacts: Contact[] = [
+  {
+    id: 'u1',
+    name: 'Maya Patel',
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400',
+    status: 'Designing new flows',
+    online: true,
+    phone: '+1 555-0110',
+  },
+  {
+    id: 'u2',
+    name: 'Noah Kim',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400',
+    status: 'At work',
+    online: false,
+    phone: '+1 555-0102',
+  },
+  {
+    id: 'u3',
+    name: 'Ava Johnson',
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400',
+    status: 'Online',
+    online: true,
+    phone: '+1 555-0103',
+  },
+  {
+    id: 'u4',
+    name: 'Engineering Team',
+    status: '12 participants',
+    online: true,
+    phone: '+1 555-0104',
+  },
+  {
+    id: 'u5',
+    name: 'Lucas Brown',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400',
+    status: 'Last seen 2h ago',
+    online: false,
+    phone: '+1 555-0105',
+  },
+  {
+    id: 'u6',
+    name: 'Sophie Green',
+    avatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400',
+    status: 'Available',
+    online: true,
+    phone: '+1 555-0106',
+  },
+  {
+    id: 'u7',
+    name: 'Ethan Miller',
+    status: 'Away',
+    online: false,
+    phone: '+1 555-0107',
+  },
+];
+
+export const chats: ChatPreview[] = [
+  {
+    id: 'c1',
+    contactIds: ['u1'],
+    title: 'Maya Patel',
+    lastMessage: 'Can we review the onboarding copy this afternoon?',
+    timestamp: new Date(Date.now() - 1000 * 60 * 5).toISOString(),
+    unreadCount: 2,
+    isGroup: false,
+  },
+  {
+    id: 'c2',
+    contactIds: ['u4'],
+    title: 'Engineering Team',
+    lastMessage: 'Release branch is green on CI.',
+    timestamp: new Date(Date.now() - 1000 * 60 * 35).toISOString(),
+    unreadCount: 0,
+    isGroup: true,
+  },
+  {
+    id: 'c3',
+    contactIds: ['u2'],
+    title: 'Noah Kim',
+    lastMessage: 'Shared a file: architecture-v3.pdf',
+    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 3).toISOString(),
+    unreadCount: 0,
+    isGroup: false,
+  },
+  {
+    id: 'c4',
+    contactIds: ['u6'],
+    title: 'Sophie Green',
+    lastMessage: 'typing...',
+    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 10).toISOString(),
+    unreadCount: 4,
+    isGroup: false,
+    typing: true,
+  },
+  {
+    id: 'c5',
+    contactIds: ['u5'],
+    title: 'Lucas Brown',
+    lastMessage: 'Photo',
+    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 24).toISOString(),
+    unreadCount: 0,
+    isGroup: false,
+  },
+];
+
+export const messages: Message[] = [
+  {
+    id: 'm1',
+    chatId: 'c1',
+    senderId: 'u1',
+    contentType: 'text',
+    text: 'Good morning. Do you have 10 minutes for UI review?',
+    sentAt: new Date(Date.now() - 1000 * 60 * 60 * 20).toISOString(),
+    read: true,
+  },
+  {
+    id: 'm2',
+    chatId: 'c1',
+    senderId: 'me',
+    contentType: 'text',
+    text: 'Sure, send me the latest screen and I will check it now.',
+    sentAt: new Date(Date.now() - 1000 * 60 * 60 * 19).toISOString(),
+    read: true,
+  },
+  {
+    id: 'm3',
+    chatId: 'c1',
+    senderId: 'u1',
+    contentType: 'image',
+    mediaUri: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=900',
+    text: 'Updated spacing and CTA hierarchy.',
+    sentAt: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(),
+    read: true,
+  },
+  {
+    id: 'm4',
+    chatId: 'c1',
+    senderId: 'u1',
+    contentType: 'file',
+    fileName: 'onboarding-copy-v2.docx',
+    text: 'Here is the latest draft.',
+    sentAt: new Date(Date.now() - 1000 * 60 * 60 * 1).toISOString(),
+    read: true,
+  },
+  {
+    id: 'm5',
+    chatId: 'c1',
+    senderId: 'me',
+    contentType: 'text',
+    text: 'Looks good. I will leave comments before lunch.',
+    sentAt: new Date(Date.now() - 1000 * 60 * 15).toISOString(),
+    read: false,
+  },
+];
+
+export const groupAvatarOptions: GroupAvatarOption[] = [
+  { id: 'ga1', label: 'Dev', color: '#7C3AED' },
+  { id: 'ga2', label: 'Ops', color: '#9333EA' },
+  { id: 'ga3', label: 'UX', color: '#EC4899' },
+  { id: 'ga4', label: 'PM', color: '#5B21B6' },
+  { id: 'ga5', label: 'QA', color: '#10B981' },
+];
